@@ -1,0 +1,19 @@
+{
+  "name": "graphlens-root",
+  "version": "1.0.0",
+  "description": "GraphLens - Corporate Ownership & Relationship Investigation Tool backed by CognoDB",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "seed": "node scripts/seed.js",
+    "backend": "npm start --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5",
+    "neo4j-driver": "^5.23.0"
+  }
+}
