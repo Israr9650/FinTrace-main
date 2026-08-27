@@ -242,6 +242,26 @@ npm run dev
 
 ---
 
+## Deployment & Live Demo
+
+GraphLens can be deployed to static web hosts (frontend) and Node.js cloud platforms (backend).
+
+* **Live Demo URL**: [https://fintrackmain.vercel.app/](https://fintrackmain.vercel.app/)
+* **Database**: CognoDB Cloud (managed openCypher / Bolt instance)
+
+### Deployment Architecture
+
+```text
+Browser ──► Frontend (Vercel / Netlify) ──► Express API (Render / Railway) ──► CognoDB Cloud (Bolt)
+```
+
+For production deployment:
+1. Deploy `backend/` to a Node.js host (Render, Railway, or Fly.io) and configure environment variables (`COGNODB_URI`, `COGNODB_USER`, `COGNODB_PASSWORD`).
+2. Deploy `frontend/` build output (`npm run build`) to a static web host (Vercel or Netlify).
+3. Do not include CognoDB credentials in frontend environment variables.
+
+---
+
 ## Application Screenshots
 
 *(Add screenshots of the 4 main application pages below after running locally)*
@@ -263,6 +283,3 @@ npm run dev
 * [x] **Error Handling**: Friendly UI error state when CognoDB is unreachable with retry option.
 * [x] **Responsive Layout**: Mobile, tablet, and desktop friendly UI design.
 * [x] **Production Build**: Ran `npm run build --prefix frontend` — built with 0 errors.
-
-**Submission Email**: `hr@wexa.ai`  
-**Subject Line**: `CognoDB Assignment 2 – <Your Name>`
